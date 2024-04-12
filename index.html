@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            background-color: #FFEEEC;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #333;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            text-align: center;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #e64848;
+            color: #fff;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #ff7f7f;
+        }
+
+        #yes-button {
+            background-color: #5cb85c;
+        }
+
+        #yes-button:hover {
+            background-color: #4cae4c;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+    <script>
+        function loveMe(answer) {
+            if (answer === 'yes') {
+                // Redirect to the next page
+                window.location.href = 'ans.html';
+            } else if (answer === 'no') {
+                // Make the "yes" button bigger
+                var yesButton = document.getElementById('yes-button');
+                var computedStyle = window.getComputedStyle(yesButton);
+                var fontSize = parseFloat(computedStyle.getPropertyValue('font-size'));
+                yesButton.style.fontSize = (fontSize + 5) + 'px';
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <section>
+            <iframe src="https://giphy.com/embed/sWPxv7XaSFfHXyQEIN" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>           
+            <h1>Do you love me?</h1>
+            <button id="yes-button" onclick="loveMe('yes')">Yes</button>
+            <button onclick="loveMe('no')">No</button>
+        </section>
+    </main>
+
+</body>
+</html>
